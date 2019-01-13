@@ -1,0 +1,6 @@
+{
+    "externalAPI": {
+        "temperature": "http://localhost:8000",
+        "windspeed": "http://localhost:8080"
+    }
+}

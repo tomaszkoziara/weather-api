@@ -6,7 +6,8 @@
             "dom"
         ],
         "types": [
-            "reflect-metadata"
+            "reflect-metadata",
+            "node"
         ],
         "module": "commonjs",
         "moduleResolution": "node",
@@ -17,5 +18,8 @@
     },
     "include": [
         "src/**/*"
+    ],
+    "exclude": [
+        "src/**/*.spec.ts"
     ]
 }
