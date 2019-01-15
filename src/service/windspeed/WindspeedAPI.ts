@@ -1,25 +1,25 @@
 import * as buildUrl from 'build-url';
 import { injectable, inject } from 'inversify';
-import { ITemperatureAPIConfig } from './TemperatureAPIConfig';
+import { IWindspeedAPIConfig } from './WindspeedAPIConfig';
 import { TYPES } from '../../types';
 import { DateUtils } from '../../util/DateUtils';
 
-interface ITemperatureAPI {
-    fetchTemperature(date: string);
+interface IWindspeedAPI {
+    fetchWindspeed(date: string);
 }
 
 @injectable()
-class TemperatureAPI implements ITemperatureAPI {
+class WindspeedAPI implements IWindspeedAPI {
 
     private endpoint: string;
 
     constructor(
-        @inject(TYPES.ITemperatureAPIConfig) temperatureAPIConfig: ITemperatureAPIConfig
+        @inject(TYPES.IWindspeedAPIConfig) windspeedAPIConfig: IWindspeedAPIConfig
     ) {
-        this.endpoint = temperatureAPIConfig.getEndpoint();
+        this.endpoint = windspeedAPIConfig.getEndpoint();
     }
 
-    async fetchTemperature(date: string): Promise<any> {
+    async fetchWindspeed(date: string): Promise<any> {
         const formattedDate = DateUtils.toISO8601WithZeroTime(date);
 
         const url = buildUrl(this.endpoint, {
@@ -33,4 +33,4 @@ class TemperatureAPI implements ITemperatureAPI {
 
 }
 
-export { ITemperatureAPI, TemperatureAPI };
+export { IWindspeedAPI, WindspeedAPI };
