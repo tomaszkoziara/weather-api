@@ -1,8 +1,8 @@
 ## Exposed API
 
-1: `GET /temperatures?start=2018-08-01T00:00:00Z&end=2018-08-07T00:00:00Z`
-2: `GET /speeds?start=2018-08-01T00:00:00Z&end=2018-08-04T00:00:00Z`
-3: `GET /weather?start=2018-08-01T00:00:00Z&end=2018-08-04T00:00:00Z`
+1. `GET /temperatures?start=2018-08-01T00:00:00Z&end=2018-08-07T00:00:00Z`
+2. `GET /speeds?start=2018-08-01T00:00:00Z&end=2018-08-04T00:00:00Z`
+3. `GET /weather?start=2018-08-01T00:00:00Z&end=2018-08-04T00:00:00Z`
 
 # Considerations
 
