@@ -1,0 +1,6 @@
+{
+    "externalAPI": {
+        "temperature": "http://temperature:8000",
+        "windspeed": "http://windspeed:8080"
+    }
+}

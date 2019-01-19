@@ -3,6 +3,7 @@ import * as logger from 'koa-logger';
 import { injectable, inject } from 'inversify';
 import { Router } from './Router';
 import { TYPES } from './types';
+import { APIError } from './controller/APIError';
 
 @injectable()
 class App {
@@ -18,19 +19,26 @@ class App {
     }
 
     run(port) {
+
+        const koaRouter = this.router.build();
+
         // Error middleware
         this.koa.use(async (ctx, next) => {
             try {
                 await next();
             } catch (err) {
-                ctx.status = err.status || 500;
-                ctx.body = err.message;
-                ctx.app.emit('error', err, ctx);
+                if (err instanceof APIError) {
+                    ctx.status = err.status || 500;
+                    ctx.body = err.message;
+                    ctx.app.emit('error', err, ctx);
+                } else {
+                    ctx.status = 500;
+                    ctx.body = 'Server error.';
+                    ctx.app.emit('error', err, ctx);
+                }
             }
         });
         this.koa.use(logger());
-
-        const koaRouter = this.router.build();
         this.koa.use(koaRouter.routes());
         this.koa.use(koaRouter.allowedMethods());
 

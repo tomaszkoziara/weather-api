@@ -1,0 +1,7 @@
+node:8-alpine
+
+docker compose up
+docker image pull node:latest
+docker image ls
+docker container ls -a
+docker image build -t weather-api-test:latest . -f test.Dockerfile

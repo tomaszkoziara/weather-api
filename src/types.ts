@@ -2,11 +2,12 @@ const TYPES = {
     App: Symbol.for('App'),
     Router: Symbol.for('Router'),
 
-    ITemperatureAPIConfig: Symbol.for('ITemperatureAPIConfig'),
     ITemperatureAPI: Symbol.for('ITemperatureAPI'),
+    IWindspeedAPI: Symbol.for('IWindspeedAPI'),
 
-    IWindspeedAPIConfig: Symbol.for('IWindspeedAPIConfig'),
-    IWindspeedAPI: Symbol.for('IWindspeedAPI')
+    IWeatherService: Symbol.for('IWeatherService'),
+
+    IWeatherAPIController: Symbol.for('IWeatherAPIController')
 };
 
 export { TYPES };
