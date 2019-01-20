@@ -11,19 +11,30 @@ services:
     restart: unless-stopped
 
   windspeed:
-      image: pluspeterpublic/windspeed:latest
-      ports:
-        - "8080:8080"
-      environment:
-        - PORT=8080
-      restart: unless-stopped
+    image: pluspeterpublic/windspeed:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - PORT=8080
+    restart: unless-stopped
 
   weather:
-      image: weather-api
-      ports:
-        - "3000:3000"
-      depends_on:
-        - temperature
-        - windspeed
-      restart: "no"
-      tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=container
+    depends_on:
+      - temperature
+      - windspeed
+    restart: unless-stopped
+    tty: true
+
+  weather-tests:
+    build:
+      context: .
+      dockerfile: test.Dockerfile
+    restart: "no"
+

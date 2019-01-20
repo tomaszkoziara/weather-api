@@ -1,8 +1,11 @@
 FROM node:8-alpine
-RUN apk add --no-cache git
-RUN git clone https://github.com/tomaszkoziara/weather-api.git /usr/app
-WORKDIR /usr/app/weather-api
-RUN npm install
-EXPOSE 3000
-RUN npm run build
+WORKDIR /usr/app/weather-api-test
+COPY package*.json ./
+COPY tsconfig.json .
+COPY src ./src
+COPY test ./test
+COPY config ./config
+RUN npm set progress=false && \
+    npm config set depth 0 && \
+    npm install --no-cache
 RUN npm run test
