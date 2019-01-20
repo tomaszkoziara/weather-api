@@ -1,9 +1,12 @@
 import * as koaRouter from 'koa-router';
 import { injectable, inject } from 'inversify';
 import { TYPES } from './types';
-import { ITemperatureAPI } from './service/TemperatureAPI';
-import { IWindspeedAPI } from './service/WindspeedAPI';
 import { IWeatherAPIController } from './controller/WeatherAPIController';
+
+/**
+ * Router component which provides exposed routes and bindings between routes and controllers
+ * that manage routes.
+ */
 
 @injectable()
 class Router {

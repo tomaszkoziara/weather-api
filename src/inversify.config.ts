@@ -7,6 +7,8 @@ import { WindspeedAPI, IWindspeedAPI } from "./service/WindspeedAPI";
 import { IWeatherAPIController, WeatherAPIController } from "./controller/WeatherAPIController";
 import { IWeatherService, WeatherService } from "./service/WeatherService";
 
+// Here's container configuration. The library of choice is InversifyJS (http://inversify.io/).
+
 const appContainer = new Container();
 
 appContainer.bind<App>(TYPES.App).to(App);

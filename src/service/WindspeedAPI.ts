@@ -8,6 +8,9 @@ interface IWindspeedAPI {
     fetchWindspeed(date: Date);
 }
 
+/**
+ * Component that handles interactions with windspeed API.
+ */
 @injectable()
 class WindspeedAPI extends AbstractAPI implements IWindspeedAPI {
 

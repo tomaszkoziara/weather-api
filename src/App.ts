@@ -5,6 +5,10 @@ import { Router } from './Router';
 import { TYPES } from './types';
 import { APIError } from './controller/APIError';
 
+/**
+ * The main class of the application.
+ */
+
 @injectable()
 class App {
 

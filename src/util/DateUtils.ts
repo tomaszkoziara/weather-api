@@ -6,10 +6,9 @@ const extendedMoment = extendMoment(moment);
 class DateUtils {
 
     /**
-     * Checks if a string is an ISO8601 date and returns the same date 
-     * as a string with 0 hours, minutes and seconds.
+     * Converts a date in a ISO8601 string with 0 hours, minutes and seconds.
      * 
-     * @param date a string representing a ISO8601 date
+     * @param date a date to convert
      */
     static toISO8601WithZeroTime(date: Date): string {
 
@@ -24,22 +23,13 @@ class DateUtils {
         return formattedDate;
     }
 
-    // static toISO8601WithZeroTime(date: string): string {
-    //     if (!date) {
-    //         throw new Error('Parameter date missing!');
-    //     }
-
-    //     const dateAsMoment = moment(date, moment.ISO_8601);
-    //     if (!dateAsMoment.isValid()) {
-    //         throw new Error('Parameter date is not a valid ISO8601 date!');
-    //     }
-
-    //     const datePart = date.split('T')[0];
-    //     const formattedDate = datePart + 'T00:00:00Z';
-
-    //     return formattedDate;
-    // }
-
+    /**
+     * Returns the arrays of dates between two dates.
+     * Starting and ending dates are included.
+     * 
+     * @param start starting date
+     * @param end ending date
+     */
     static getRangeBetweenDates(start: Date, end: Date) {
         const startMoment = moment(start);
         const endMoment = moment(end);

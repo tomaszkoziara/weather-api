@@ -10,6 +10,9 @@ interface IWeatherService {
     fetchWeather(start: Date, end: Date);
 }
 
+/**
+ * Component that provides service layer for weather API.
+ */
 @injectable()
 class WeatherService {
 

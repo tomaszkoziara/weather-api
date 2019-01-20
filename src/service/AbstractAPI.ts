@@ -21,7 +21,8 @@ abstract class AbstractAPI {
         const response = await global['fetch'](url, {});
         const jsonResponse = await response.json();
         // Should check if response contains a server error so is
-        // not worth caching
+        // not worth caching and should instead throw an error so it can be handled
+        // at service implementation/controller level
         this.cache[url] = jsonResponse;
         return jsonResponse;
     }

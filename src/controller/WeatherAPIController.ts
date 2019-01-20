@@ -14,6 +14,9 @@ interface IWeatherAPIController {
 
 }
 
+/**
+ * Class that handles routes behaviour.
+ */
 @injectable()
 class WeatherAPIController {
 

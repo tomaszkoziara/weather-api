@@ -9,6 +9,9 @@ interface ITemperatureAPI {
     fetchTemperature(date: Date);
 }
 
+/**
+ * Component that handles interactions with temperature API.
+ */
 @injectable()
 class TemperatureAPI extends AbstractAPI implements ITemperatureAPI {
 
