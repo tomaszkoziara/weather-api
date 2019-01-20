@@ -1,6 +1,5 @@
 import * as buildUrl from 'build-url';
 import { injectable, inject } from 'inversify';
-import { TYPES } from '../types';
 import { DateUtils } from '../util/DateUtils';
 import * as config from 'config';
 import { AbstractAPI } from './AbstractAPI';

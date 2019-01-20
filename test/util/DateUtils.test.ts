@@ -1,12 +1,10 @@
 import 'reflect-metadata';
 import 'mocha';
 import { assert } from 'chai';
-import { DateUtils } from '../src/util/DateUtils';
+import { DateUtils } from '../../src/util/DateUtils';
 import * as moment from 'moment';
 
 describe('DateUtils', () => {
-
-    let temperatureAPI = null;
 
     describe('toISO8601WithZeroTime', () => {
 

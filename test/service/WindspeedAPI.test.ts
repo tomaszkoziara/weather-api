@@ -3,7 +3,7 @@ import 'mocha';
 import { assert, expect } from 'chai';
 import * as fetchMock from 'fetch-mock';
 
-import { WindspeedAPI, IWindspeedAPI } from '../src/service/WindspeedAPI';
+import { WindspeedAPI, IWindspeedAPI } from '../../src/service/WindspeedAPI';
 
 describe('WindspeedAPI', () => {
 

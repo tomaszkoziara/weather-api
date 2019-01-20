@@ -3,7 +3,7 @@ import 'mocha';
 import { assert, expect } from 'chai';
 import * as fetchMock from 'fetch-mock';
 
-import { TemperatureAPI, ITemperatureAPI } from '../src/service/TemperatureAPI';
+import { TemperatureAPI, ITemperatureAPI } from '../../src/service/TemperatureAPI';
 
 describe('TemperatureAPI', () => {
 

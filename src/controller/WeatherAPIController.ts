@@ -55,7 +55,7 @@ class WeatherAPIController {
         ctx.body = await this.weatherService.fetchWeather(new Date(start), new Date(end));
     }
 
-    public checkParameters(start: string, end: string) {
+    private checkParameters(start: string, end: string) {
         this.missingParameter(start, 'start');
         this.missingParameter(end, 'end');
         this.parameterNotISO8601(start, 'start');
